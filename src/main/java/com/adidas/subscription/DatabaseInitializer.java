@@ -12,11 +12,19 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Populates the database with mock data on the application startup
+ */
 @Configuration
 public class DatabaseInitializer {
  
     private static final Logger LOGGER = LoggerFactory.getLogger( DatabaseInitializer.class);
 
+    /**
+     * Defines the commands for populating the database with mock data
+     * @param repository SubscriptionRepository instance for populating the database
+     * @return commadnds to be run
+     */
     @Bean
     CommandLineRunner initDatabase( SubscriptionRepository repository){
         return args -> {
